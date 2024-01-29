@@ -14,6 +14,9 @@ export default function Home() {
   useEffect(() => {
     setfirstloading(true);
     const todoarr = JSON.parse(localStorage.getItem("todoarr")) || [];
+    if (todoarr.length === 0) {
+      setAddingtodo(true);
+    }
     settodoarr(todoarr);
     setfirstloading(false);
   }, []);
